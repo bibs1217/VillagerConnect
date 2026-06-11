@@ -14,6 +14,7 @@ const CHIPS = [
   'What community events are happening this week?',
   'Who are my Sumter County officials and when is the next election?',
   "What's in the news in The Villages today?",
+  'Decorate my golf cart for the 4th of July parade',
   'Plan me a perfect Friday: dinner, live music, and an event',
 ]
 
@@ -56,6 +57,7 @@ function ResultCard({ card, openPanel }: { card: any; openPanel: (c: any) => voi
   if (card.kind === 'event') return <CardChrome icon="📅" title={card.title} sub={`${card.event_date} · ${card.event_time}`} lines={[`${card.location} · ${card.cost}`, card.organizer, card.description]} onOpen={open} openLabel="RSVP / Details" pageHref="/events" pageLabel="Events" extra={<a href={`https://maps.google.com/?q=${encodeURIComponent(card.location + ' The Villages FL')}`} target="_blank" rel="noreferrer" style={{ background: 'transparent', color: GREEN, border: `1px solid ${GREEN}44`, borderRadius: '0.5rem', padding: '0.35rem 0.75rem', fontWeight: 700, fontSize: '0.78rem', textDecoration: 'none' }}>Get Directions</a>} />
   if (card.kind === 'official') return <CardChrome icon="🏛️" title={card.name} sub={card.title} lines={[`${card.party} · ${card.scope}`, card.phone]} onOpen={open} openLabel="Contact Info" pageHref="/elections" pageLabel="Elections" />
   if (card.kind === 'election') return <CardChrome icon="🗳️" title={card.name} sub={`${card.date} · ${card.type}`} lines={[card.scope, card.description]} onOpen={open} openLabel="Election Details" pageHref="/elections" pageLabel="Elections" />
+  if (card.kind === 'decor') return <CardChrome icon="🎨" title={card.title} sub={card.occasion + ' theme'} lines={[card.note]} onOpen={open} openLabel="Decorating Details" pageHref="/cart-decorating" pageLabel="Cart Decorating" />
   return null
 }
 
