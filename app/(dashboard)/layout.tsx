@@ -15,6 +15,13 @@ const NAV = [
   { icon: '⛳', label: 'Golf Courses', href: '/golf-courses' },
   { icon: '💬', label: 'Community Forums', href: '/forums' },
   { icon: '📅', label: 'Events', href: '/events' },
+  { icon: '🚗', label: 'Car Meets & Events', href: '/car-events' },
+  { icon: '🛒', label: 'Buy/Sell Golf Carts', href: '/golf-cart-search' },
+  { icon: '🔩', label: 'Cart Parts & Mods', href: '/cart-parts' },
+  { icon: '🔧', label: 'AI Cart Mechanic', href: '/cart-mechanic' },
+  { icon: '🏌️', label: 'Cart Garage', href: '/cart-garage' },
+  { icon: '💬', label: 'Cart Forums', href: '/cart-forums' },
+  { icon: '🛍️', label: 'Cart Accessories', href: '/cart-store' },
 ]
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
