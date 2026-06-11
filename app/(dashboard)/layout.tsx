@@ -7,6 +7,7 @@ import { usePathname, useRouter } from 'next/navigation'
 
 const NAV = [
   { icon: '🏠', label: 'Home',              href: '/' },
+  { icon: '🤖', label: 'VillagerConnect AI', href: '/villager-ai' },
   { icon: '🎵', label: 'Entertainment',     href: '/entertainment' },
   { icon: '📰', label: 'News',              href: '/news' },
   { icon: '🗳️', label: 'Elections',        href: '/elections' },
