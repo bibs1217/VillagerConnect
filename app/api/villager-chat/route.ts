@@ -9,7 +9,7 @@ import {
   OFFICIALS, UPCOMING_ELECTIONS, VOTER_INFO, ENTERTAINMENT_SHOWS,
 } from '../../../lib/villages-data'
 
-const SYSTEM_PROMPT = `You are the VillagerConnect AI — a longtime Villages resident and expert community concierge with live access to the entire VillagerConnect platform for The Villages, Florida. You can search nightly entertainment at all three town squares, look up restaurants and shops at every landing, search 50+ golf courses, find golf cart rental companies with live rates, surface community events, and pull local officials, upcoming elections, and voter information for Sumter County. You also have live web search for anything else — news, weather, schedules, or questions beyond the platform.
+const SYSTEM_PROMPT = `You are the VillagerConnect AI — a longtime Villages resident and expert community concierge with live access to the entire VillagerConnect platform for The Villages, Florida. You can search nightly entertainment at all three town squares, look up restaurants and shops at every landing, search 50+ golf courses, find golf cart rental companies with live rates, surface community events, get golf cart decorating ideas for holidays and parades, and pull local officials, upcoming elections, and voter information for Sumter County. You also have live web search for anything else — news, weather, schedules, or questions beyond the platform.
 
 When a user asks a question, proactively search across whatever platform features are relevant and include specific recommendations, names, times, prices, and phone numbers in your response. You can run multiple searches in a single response. Never tell the user you can't look something up. Be warm, direct, knowledgeable, and neighborly — the friendliest guide in the friendliest hometown.`
 
@@ -80,6 +80,13 @@ const TOOLS: any[] = [
     description: 'Get the trusted local news sources for The Villages and Sumter County. Pair with web_search for live headlines.',
     input_schema: { type: 'object', properties: {
       topic: { type: 'string', description: 'News topic of interest' },
+    } },
+  },
+  {
+    name: 'cart_decorating_ideas',
+    description: 'Get golf cart decorating themes, parade info, materials and tips for The Villages. Use for any question about decorating a golf cart for holidays, parades, contests, weddings, or events.',
+    input_schema: { type: 'object', properties: {
+      occasion: { type: 'string', description: 'Occasion or theme, e.g. Christmas, 4th of July, Halloween, Birthday, Wedding' },
     } },
   },
 ]
@@ -156,6 +163,17 @@ function runTool(name: string, input: any, cards: Card[]): any {
       note: 'Use web_search now to pull live current headlines on the topic: ' + (input.topic || 'The Villages Florida news'),
     }
   }
+  if (name === 'cart_decorating_ideas') {
+    const occ = input.occasion || q || 'Holiday'
+    cards.push({ kind: 'decor', occasion: occ, title: occ + ' Cart Decorating Studio', note: 'Full decorating AI assistant, idea gallery, and community cart photos' })
+    return {
+      occasion: occ,
+      popular_themes: ['Christmas', 'Halloween', '4th of July', 'Spring/Easter', 'Game Day', 'Birthday', 'Wedding', 'Thanksgiving', 'New Years', 'Valentines Day', 'St Patricks Day', 'Golf Tournament'],
+      parades: 'Famous decorated golf cart parades at Lake Sumter Landing, Brownwood Paddock Square, and Spanish Springs - biggest are Christmas and 4th of July.',
+      tips: 'Use magnetic mounts, zip ties, and Command strips (no frame damage). Pick Florida-proof materials that survive heat, humidity, and rain. LED lighting works with 36V/48V/72V carts via 12V accessory outlets. Shop Dollar Tree, Walmart, Michaels near 32162.',
+      instruction: 'Give the user a materials list with estimated costs, step-by-step instructions, attachment tips, and Florida weather notes for the occasion. Point them to the Cart Decorating studio card for the full gallery and dedicated AI assistant.',
+    }
+  }
   return { error: 'Unknown tool' }
 }
 
@@ -181,7 +199,7 @@ export async function POST(req: Request) {
           'content-type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-5',
+          model: 'claude-sonnet-4-6',
           max_tokens: 1500,
           system: SYSTEM_PROMPT,
           tools: TOOLS,
