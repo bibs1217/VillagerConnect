@@ -29,25 +29,149 @@ const OCCASIONS = [
 ]
 
 const ALL_PHOTOS = [
-  { id:'c1', occasion:'Christmas',     emoji:'🎄', url:'https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=400&q=85', height:260 },
-  { id:'c2', occasion:'Christmas',     emoji:'🎄', url:'https://images.unsplash.com/photo-1543362906-acfc16c67564?w=400&q=85', height:220 },
-  { id:'c3', occasion:'Christmas',     emoji:'🎄', url:'https://images.unsplash.com/photo-1576919228236-a097c32a5cd4?w=400&q=85', height:300 },
-  { id:'j1', occasion:'4th of July',   emoji:'🇺🇸', url:'https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=400&q=85', height:240 },
-  { id:'j2', occasion:'4th of July',   emoji:'🇺🇸', url:'https://images.unsplash.com/photo-1533294455009-a77b7557d2d1?w=400&q=85', height:280 },
-  { id:'h1', occasion:'Halloween',     emoji:'🎃', url:'https://images.unsplash.com/photo-1509557965875-b88c97052f0e?w=400&q=85', height:250 },
-  { id:'h2', occasion:'Halloween',     emoji:'🎃', url:'https://images.unsplash.com/photo-1570393277671-c2f9dfab98c6?w=400&q=85', height:230 },
-  { id:'e1', occasion:'Spring/Easter', emoji:'🌸', url:'https://images.unsplash.com/photo-1519996529931-28324d5a630e?w=400&q=85', height:270 },
-  { id:'e2', occasion:'Spring/Easter', emoji:'🌸', url:'https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=400&q=85', height:220 },
-  { id:'g1', occasion:'Game Day',      emoji:'🏈', url:'https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=400&q=85', height:260 },
-  { id:'b1', occasion:'Birthday',      emoji:'🎂', url:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&q=85', height:240 },
-  { id:'b2', occasion:'Birthday',      emoji:'🎂', url:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400&q=85', height:260 },
-  { id:'w1', occasion:'Wedding',       emoji:'💒', url:'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=400&q=85', height:280 },
-  { id:'w2', occasion:'Wedding',       emoji:'💒', url:'https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=400&q=85', height:230 },
-  { id:'s1', occasion:'Summer',        emoji:'🏖️', url:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=85', height:250 },
-  { id:'s2', occasion:'Summer',        emoji:'🏖️', url:'https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=400&q=85', height:220 },
+  // Christmas
+  { id:'c1', occasion:'Christmas',      emoji:'🎄', height:260,
+    url:'https://images.unsplash.com/photo-1576919228236-a097c32a5cd4?w=400&q=85',
+    title:'Christmas Cart — Lights & Garland',
+    tips:'LED lights on roof frame · Front wreath · Seat garland · Bow accessories' },
+  { id:'c2', occasion:'Christmas',      emoji:'🎄', height:230,
+    url:'https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=400&q=85',
+    title:'Christmas Cart Light Display',
+    tips:'LED lights on roof frame · Front wreath · Seat garland · Bow accessories' },
+  { id:'c3', occasion:'Christmas',      emoji:'🎄', height:300,
+    url:'https://images.unsplash.com/photo-1543362906-acfc16c67564?w=400&q=85',
+    title:'Christmas Wreath & Ribbon Decor',
+    tips:'LED lights on roof frame · Front wreath · Seat garland · Bow accessories' },
+  // 4th of July
+  { id:'j1', occasion:'4th of July',    emoji:'🇺🇸', height:250,
+    url:'https://images.unsplash.com/photo-1521478706270-f2e33c203d95?w=400&q=85',
+    title:'Patriotic Cart — Stars & Stripes',
+    tips:'Red white blue bunting · Flag display · Star garland · Patriotic pinwheels' },
+  { id:'j2', occasion:'4th of July',    emoji:'🇺🇸', height:280,
+    url:'https://images.unsplash.com/photo-1533294455009-a77b7557d2d1?w=400&q=85',
+    title:'Red White & Blue Cart Theme',
+    tips:'Red white blue bunting · Flag display · Star garland · Patriotic pinwheels' },
+  // Halloween
+  { id:'h1', occasion:'Halloween',      emoji:'🎃', height:250,
+    url:'https://images.unsplash.com/photo-1509557965875-b88c97052f0e?w=400&q=85',
+    title:'Halloween Pumpkin Cart',
+    tips:'Orange string lights · Pumpkin accents · Cobweb draping · Skull decorations' },
+  { id:'h2', occasion:'Halloween',      emoji:'🎃', height:230,
+    url:'https://images.unsplash.com/photo-1570393277671-c2f9dfab98c6?w=400&q=85',
+    title:'Spooky Halloween Decor Ideas',
+    tips:'Orange string lights · Pumpkin accents · Cobweb draping · Skull decorations' },
+  // Spring/Easter
+  { id:'e1', occasion:'Spring/Easter',  emoji:'🌸', height:270,
+    url:'https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=400&q=85',
+    title:'Spring Floral Cart Theme',
+    tips:'Flower garland · Pastel ribbons · Easter basket display · Spring wreath' },
+  { id:'e2', occasion:'Spring/Easter',  emoji:'🌸', height:220,
+    url:'https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=400&q=85',
+    title:'Easter Pastel Cart Decoration',
+    tips:'Flower garland · Pastel ribbons · Easter basket display · Spring wreath' },
+  // Game Day
+  { id:'g1', occasion:'Game Day',       emoji:'🏈', height:260,
+    url:'https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=400&q=85',
+    title:'Game Day Sports Cart',
+    tips:'Team color streamers · Sports flags · Jersey display · Foam fingers' },
+  { id:'g2', occasion:'Game Day',       emoji:'🏈', height:245,
+    url:'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&q=85',
+    title:'Sports Fan Cart Decor',
+    tips:'Team color streamers · Sports flags · Jersey display · Foam fingers' },
+  // Birthday
+  { id:'b1', occasion:'Birthday',       emoji:'🎂', height:240,
+    url:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&q=85',
+    title:'Birthday Celebration Cart',
+    tips:'Balloon arch · Birthday banner · Confetti streamers · Number balloons' },
+  { id:'b2', occasion:'Birthday',       emoji:'🎂', height:260,
+    url:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400&q=85',
+    title:'Birthday Party Cart Setup',
+    tips:'Balloon arch · Birthday banner · Confetti streamers · Number balloons' },
+  // Wedding
+  { id:'w1', occasion:'Wedding',        emoji:'💒', height:280,
+    url:'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=400&q=85',
+    title:'Wedding Cart — Floral & Ribbon',
+    tips:'White floral garland · Ribbon streamers · Just Married sign · Flower clusters' },
+  { id:'w2', occasion:'Wedding',        emoji:'💒', height:230,
+    url:'https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=400&q=85',
+    title:'Bridal Golf Cart Decoration',
+    tips:'White floral garland · Ribbon streamers · Just Married sign · Flower clusters' },
+  // Summer
+  { id:'s1', occasion:'Summer',         emoji:'🏖️', height:250,
+    url:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=85',
+    title:'Tropical Summer Cart Theme',
+    tips:'Tropical flower leis · Palm leaf accents · Beach flag · Seashell decorations' },
+  { id:'s2', occasion:'Summer',         emoji:'🏖️', height:220,
+    url:'https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=400&q=85',
+    title:'Beach & Tropical Cart Decor',
+    tips:'Tropical flower leis · Palm leaf accents · Beach flag · Seashell decorations' },
+  // Thanksgiving
+  { id:'t1', occasion:'Thanksgiving',   emoji:'🍂', height:255,
+    url:'https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&q=85',
+    title:'Thanksgiving Harvest Cart',
+    tips:'Fall leaf garland · Pumpkin accents · Harvest banner · Corn stalk display' },
+  { id:'t2', occasion:'Thanksgiving',   emoji:'🍂', height:235,
+    url:'https://images.unsplash.com/photo-1509482560494-4126f8225993?w=400&q=85',
+    title:'Fall Harvest Cart Decoration',
+    tips:'Fall leaf garland · Pumpkin accents · Harvest banner · Corn stalk display' },
+  // New Years
+  { id:'ny1', occasion:'New Years',     emoji:'🎆', height:260,
+    url:'https://images.unsplash.com/photo-1514192051186-6057aef4e0d4?w=400&q=85',
+    title:'New Year\'s Celebration Cart',
+    tips:'Gold streamers · Balloon clusters · Happy New Year banner · Glitter accents' },
+  { id:'ny2', occasion:'New Years',     emoji:'🎆', height:240,
+    url:'https://images.unsplash.com/photo-1528605105345-5344ea20e269?w=400&q=85',
+    title:'Gold & Silver New Year\'s Cart',
+    tips:'Gold streamers · Balloon clusters · Happy New Year banner · Glitter accents' },
+  // Valentines Day
+  { id:'v1', occasion:'Valentines Day', emoji:'💕', height:250,
+    url:'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=400&q=85',
+    title:'Valentine\'s Day Cart Theme',
+    tips:'Heart balloons · Pink ribbon streamers · Rose garland · Love banner' },
+  { id:'v2', occasion:'Valentines Day', emoji:'💕', height:230,
+    url:'https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400&q=85',
+    title:'Hearts & Roses Cart Decor',
+    tips:'Heart balloons · Pink ribbon streamers · Rose garland · Love banner' },
+  // St Patricks Day
+  { id:'sp1', occasion:'St Patricks Day', emoji:'🍀', height:250,
+    url:'https://images.unsplash.com/photo-1552763858-c8f8c8a0da67?w=400&q=85',
+    title:'St. Patrick\'s Day Green Cart',
+    tips:'Green shamrock garland · Irish flag · Green balloon clusters · Lucky banner' },
+  { id:'sp2', occasion:'St Patricks Day', emoji:'🍀', height:235,
+    url:'https://images.unsplash.com/photo-1584455292041-e18b74a2c8aa?w=400&q=85',
+    title:'Lucky Green Cart Decoration',
+    tips:'Green shamrock garland · Irish flag · Green balloon clusters · Lucky banner' },
+  // Winter
+  { id:'wi1', occasion:'Winter',        emoji:'❄️', height:255,
+    url:'https://images.unsplash.com/photo-1544441893-675973e31985?w=400&q=85',
+    title:'Winter Wonderland Cart',
+    tips:'Snowflake lights · White garland · Icicle LED strips · Frost window cling' },
+  { id:'wi2', occasion:'Winter',        emoji:'❄️', height:235,
+    url:'https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=400&q=85',
+    title:'Frosty White Cart Theme',
+    tips:'Snowflake lights · White garland · Icicle LED strips · Frost window cling' },
+  // Golf Tournament
+  { id:'gt1', occasion:'Golf Tournament', emoji:'⛳', height:250,
+    url:'https://images.unsplash.com/photo-1541441234340-9f00a9b9c23a?w=400&q=85',
+    title:'Golf Tournament Cart Decor',
+    tips:'Golf flag display · Club holder decoration · Green and white theme' },
+  // Villages Event
+  { id:'ve1', occasion:'Villages Event', emoji:'🏌️', height:260,
+    url:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&q=85',
+    title:'Villages Community Event Cart',
+    tips:'VillagerConnect banner · Green and gold streamers · Community flag display' },
+  // Party
+  { id:'p1', occasion:'Party',          emoji:'🎉', height:245,
+    url:'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=400&q=85',
+    title:'Party Cart — Full Float Style',
+    tips:'Full body wrap streamers · Grand float decorations · Multi-color balloon arch' },
+  { id:'p2', occasion:'Party',          emoji:'🎉', height:260,
+    url:'https://images.unsplash.com/photo-1496843916299-590492c751f4?w=400&q=85',
+    title:'Celebration Cart Setup',
+    tips:'Full body wrap streamers · Grand float decorations · Multi-color balloon arch' },
 ]
 
-const GALLERY_FILTERS = ['All','Christmas','4th of July','Halloween','Spring/Easter','Game Day','Birthday','Wedding','Summer']
+const GALLERY_FILTERS = ['All','Christmas','4th of July','Halloween','Spring/Easter','Game Day','Birthday','Wedding','Summer','Thanksgiving','New Years','Valentines Day','St Patricks Day','Winter','Golf Tournament','Villages Event','Party']
 
 const STARTER_QS = [
   'How do I decorate my cart for Christmas?',
@@ -288,6 +412,13 @@ export default function CartDecoratingPage() {
           </div>
         </div>
 
+        {/* Notice banner */}
+        <div style={{ background:'rgba(45,122,45,0.06)', borderRadius:'0.875rem', padding:'0.875rem 1.25rem', marginBottom:'1.25rem', border:'1px solid rgba(45,122,45,0.15)' }}>
+          <p style={{ color:'#2D7A2D', fontWeight:700, fontSize:'0.9rem' }}>
+            🎨 Decoration Inspiration — Click any theme below for step-by-step instructions from our AI decorating expert
+          </p>
+        </div>
+
         {/* Masonry grid */}
         <div style={{ columns:'260px', columnGap:'1rem' }}>
           {filteredPhotos.map(photo => (
@@ -312,6 +443,8 @@ export default function CartDecoratingPage() {
                 </button>
               </div>
               <div style={{ padding:'0.875rem' }}>
+                <h3 style={{ fontWeight:800, fontSize:'0.9rem', color:'#1A1A1A', marginBottom:'0.4rem' }}>{photo.title}</h3>
+                <p style={{ color:'#666', fontSize:'0.72rem', lineHeight:1.5, marginBottom:'0.75rem' }}>{photo.tips}</p>
                 <button
                   onClick={() => askAI(`How do I decorate my golf cart for ${photo.occasion}? Give me a complete materials list, step-by-step instructions, and tips for The Villages Florida.`, photo.occasion)}
                   style={{ width:'100%', background:'#2D7A2D', color:'white', border:'none', borderRadius:'0.625rem', padding:'0.6rem', fontWeight:700, fontSize:'0.82rem', cursor:'pointer' }}>
