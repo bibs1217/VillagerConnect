@@ -95,7 +95,7 @@ function runTool(name: string, input: any, cards: Card[]): any {
     ).slice(0, 6)
     if (!res.length) res = ENTERTAINMENT_SHOWS.slice(0, 6)
     res.forEach((s: any) => cards.push({ kind: 'show', ...s }))
-    return { shows: res, note: 'Nightly live music at all three town squares 7-10 PM is free. Use web_search for this week's official schedule if needed.' }
+    return { shows: res, note: 'Nightly live music at all three town squares 7-10 PM is free. Use web_search for this week’s official schedule if needed.' }
   }
   if (name === 'dining_lookup') {
     const out: any[] = []
