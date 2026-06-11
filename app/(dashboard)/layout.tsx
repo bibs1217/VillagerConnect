@@ -134,6 +134,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   return (
     <div style={{ display:'flex', minHeight:'100vh', background:'#F5F5F5', position:'relative' }}>
 
+      {/* DEMO badge */}
+      <div style={{ position:'fixed', bottom:'1rem', right:'1rem', zIndex:300, background:'#B8860B', color:'#FFFFFF', borderRadius:'9999px', padding:'0.45rem 1rem', fontWeight:800, fontSize:'0.8rem', boxShadow:'0 4px 12px rgba(0,0,0,0.25)', pointerEvents:'none' }}>
+        🎬 DEMO · sample data
+      </div>
+
       {/* Mobile overlay */}
       {mobileOpen && isMobile && (
         <div onClick={() => setMobileOpen(false)}
