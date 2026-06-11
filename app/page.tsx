@@ -25,6 +25,11 @@ export default function HomePage() {
   return (
     <div style={{ minHeight: '100vh', background: '#FFFFFF', color: '#1A1A1A', fontFamily: "Georgia, 'Times New Roman', sans-serif" }}>
 
+      {/* DEMO banner */}
+      <div style={{ background: '#B8860B', color: '#FFFFFF', textAlign: 'center', padding: '0.45rem 1rem', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.02em' }}>
+        🎬 You are viewing the VillagerConnect DEMO — explore every feature with sample community data
+      </div>
+
       {/* Header */}
       <header style={{ background: '#2D7A2D', padding: '0 2rem', height: '4.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
