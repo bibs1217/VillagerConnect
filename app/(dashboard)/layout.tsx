@@ -22,6 +22,7 @@ const NAV = [
   { icon: '🏌️', label: 'Cart Garage',       href: '/cart-garage' },
   { icon: '💬', label: 'Cart Forums',       href: '/cart-forums' },
   { icon: '🛍️', label: 'Cart Accessories',  href: '/cart-store' },
+  { icon: '🎨', label: 'Cart Decorating',   href: '/cart-decorating' },
 ]
 
 const BOTTOM_NAV = [
