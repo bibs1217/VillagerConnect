@@ -24,6 +24,8 @@ const NAV = [
   { icon: '💬', label: 'Cart Forums',       href: '/cart-forums' },
   { icon: '🛍️', label: 'Cart Accessories',  href: '/cart-store' },
   { icon: '🎨', label: 'Cart Decorating',   href: '/cart-decorating' },
+  { icon: '🏠', label: 'Real Estate',        href: '/real-estate' },
+
 ]
 
 const BOTTOM_NAV = [
@@ -55,6 +57,10 @@ const SEARCH_INDEX = [
   { icon:'⚡', label:'Electric Golf Carts',href:'/golf-cart-search', desc:'Buy electric golf carts',              category:'Golf Carts' },
   { icon:'🔋', label:'Cart Battery Help',  href:'/cart-mechanic',    desc:'Battery diagnosis with AI',            category:'Golf Carts' },
   { icon:'🏘️', label:'Local Community',   href:'/forums',            desc:'Meet your neighbors online',           category:'Community' },
+  { icon:'🏠', label:'Real Estate',         href:'/real-estate',        desc:'Homes for sale & rent in The Villages', category:'Real Estate' },
+  { icon:'🔑', label:'Homes for Rent',      href:'/real-estate',        desc:'Rental properties in The Villages',    category:'Real Estate' },
+  { icon:'🏡', label:'Homes for Sale',      href:'/real-estate',        desc:'Buy a home in The Villages',           category:'Real Estate' },
+
 ]
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
